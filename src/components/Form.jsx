@@ -1,3 +1,4 @@
+import Education from "./Education";
 import General from "./General";
 
 export default function Form(props) {
@@ -7,6 +8,7 @@ export default function Form(props) {
         <h1>CV Generator App</h1>
       </header>
       <General {...props} />
+      <Education {...props} />
     </section>
   );
 }

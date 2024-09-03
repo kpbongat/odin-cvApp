@@ -5,6 +5,7 @@
   --md-gap: 8px;
   --lg-font: 2rem;
   --md-font: 1.5rem;
+  --sm-font: 1.25rem;
   --letter-ar: calc(8.5 / 11);
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -33,7 +34,9 @@ input {
 .flex-col {
   flex-direction: column;
 }
-
+.sub {
+  justify-content: center;
+}
 .form {
   padding: var(--lg-padding);
 }
@@ -42,17 +45,26 @@ input {
   min-width: var(--lg-width);
   min-height: calc(var(--lg-width) / var(--letter-ar));
   background-color: white;
-  text-align: center;
 }
 
+.resume,
 .resume .flex {
   gap: var(--md-gap);
 }
 
-.sub {
-  justify-content: center;
+.header {
+  font-size: var(--md-font);
+  font-weight: bold;
 }
 
+.sub-header {
+  font-size: var(--sm-font);
+  font-weight: bold;
+}
+
+.general {
+  text-align: center;
+}
 .name {
   font-size: var(--lg-font);
   font-weight: bold;
