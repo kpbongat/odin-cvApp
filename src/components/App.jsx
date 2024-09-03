@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "../styles/index.css";
 import Resume from "./Resume";
+import Form from "./Form";
 
 function App() {
+  const [formData, setFormData] = useState({});
   return (
     <main className="flex">
-      <h1>CV Generator App</h1>
+      <Form formState={[formData, setFormData]} />
       <Resume />
     </main>
   );

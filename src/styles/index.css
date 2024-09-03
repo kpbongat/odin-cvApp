@@ -1,6 +1,10 @@
 :root {
   --lg-width: 1024px;
+  --lg-padding: 64px;
+  --md-font: 1.5rem;
   --letter-ar: calc(8.5 / 11);
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 * {
@@ -11,15 +15,28 @@
 
 body {
   background-color: lightblue;
+  padding: var(--lg-padding);
 }
 
+input {
+  font-size: var(--md-font);
+  border: none;
+  text-align: center;
+}
 .flex {
   display: flex;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.form {
+  padding: var(--lg-padding);
+}
 .resume {
-  margin: 0 auto;
-  width: var(--lg-width);
-  height: calc(var(--lg-width) / var(--letter-ar));
+  padding: var(--lg-padding);
+  min-width: var(--lg-width);
+  min-height: calc(var(--lg-width) / var(--letter-ar));
   background-color: white;
 }
