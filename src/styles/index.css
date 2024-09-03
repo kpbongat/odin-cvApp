@@ -1,6 +1,9 @@
 :root {
   --lg-width: 1024px;
   --lg-padding: 64px;
+  --lg-gap: 16px;
+  --md-gap: 8px;
+  --lg-font: 2rem;
   --md-font: 1.5rem;
   --letter-ar: calc(8.5 / 11);
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
@@ -39,4 +42,18 @@ input {
   min-width: var(--lg-width);
   min-height: calc(var(--lg-width) / var(--letter-ar));
   background-color: white;
+  text-align: center;
+}
+
+.resume .flex {
+  gap: var(--md-gap);
+}
+
+.sub {
+  justify-content: center;
+}
+
+.name {
+  font-size: var(--lg-font);
+  font-weight: bold;
 }

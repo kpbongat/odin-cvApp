@@ -8,7 +8,7 @@ function App() {
   return (
     <main className="flex">
       <Form formState={[formData, setFormData]} />
-      <Resume />
+      <Resume formData={formData} />
     </main>
   );
 }
