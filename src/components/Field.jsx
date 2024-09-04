@@ -12,13 +12,25 @@ export default function Field({
       id={id}
       placeholder={placeholder}
       onChange={(e) => {
-        if (bullet) {
+        console.log(bullet);
+        if (!bullet) {
+          setFormData({ ...formData, [id]: e.target.value });
+        } else if (bullet === "ed-bullets") {
           setFormData((formData) => ({
             ...formData,
             [bullet]: { ...formData[bullet], [id]: e.target.value },
           }));
         } else {
-          setFormData({ ...formData, [id]: e.target.value });
+          setFormData((formData) => ({
+            ...formData,
+            ["work-bullets"]: {
+              ...formData["work-bullets"],
+              [bullet]: {
+                ...formData["work-bullets"][bullet],
+                [id]: e.target.value,
+              },
+            },
+          }));
         }
       }}
     />

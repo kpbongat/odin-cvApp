@@ -17,17 +17,19 @@ export default function Resume({ formData }) {
           <li className={i[0]}>{i[1]}</li>
         ))}
       </div>
-      <div className="flex flex-col work">
-        <span className="work header">EXPERIENCE</span>
-        <span className="job sub-header">{formData.job}</span>
-        <div className="flex sub2">
-          <span className="company">{formData.company}</span>
-          <div className="flex">
-            <span className="work-date">{formData["work-date"]}</span>
-            <span className="comp-add">{formData["comp-add"]}</span>
+      <span className="work header">EXPERIENCE</span>
+      {Object.entries(formData["work-bullets"]).map((i) => (
+        <div className="flex flex-col work">
+          <span className="job sub-header">{i[1].job}</span>
+          <div className="flex sub2">
+            <span className="company">{i[1].company}</span>
+            <div className="flex">
+              <span className="work-date">{i[1]["work-date"]}</span>
+              <span className="comp-add">{i[1]["comp-add"]}</span>
+            </div>
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }

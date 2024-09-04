@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Education from "./Education";
 import General from "./General";
 import Work from "./Work";
 export default function Form(props) {
+  const [bullets, setBullets] = useState([
+    <Work id="work-bullet1" {...props} />,
+  ]);
   return (
     <section className="flex flex-col form">
       <header>
@@ -9,7 +13,17 @@ export default function Form(props) {
       </header>
       <General {...props} />
       <Education {...props} />
-      <Work {...props} />
+      {bullets}
+      <button
+        onClick={() => {
+          setBullets([
+            ...bullets,
+            <Work id={`work-bullet${bullets.length + 1}`} {...props} />,
+          ]);
+        }}
+      >
+        +
+      </button>
     </section>
   );
 }
