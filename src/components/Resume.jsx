@@ -13,7 +13,9 @@ export default function Resume({ formData }) {
         <span className="education header">EDUCATION</span>
         <span className="college-degree sub-header">{`${formData.college}, ${formData["college-add"]} — ${formData.degree}`}</span>
         <span className="grad-year">{formData.grad}</span>
-        <li className="other">{formData.other}</li>
+        {Object.entries(formData["ed-bullets"]).map((i) => (
+          <li className={i[0]}>{i[1]}</li>
+        ))}
       </div>
       <div className="flex flex-col work">
         <span className="work header">EXPERIENCE</span>
@@ -25,7 +27,6 @@ export default function Resume({ formData }) {
             <span className="comp-add">{formData["comp-add"]}</span>
           </div>
         </div>
-        <li className="other">{formData["work-other"]}</li>
       </div>
     </div>
   );

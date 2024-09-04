@@ -4,7 +4,7 @@ import Resume from "./Resume";
 import Form from "./Form";
 
 function App() {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({ ["ed-bullets"]: {} });
   return (
     <main className="flex">
       <Form formState={[formData, setFormData]} />

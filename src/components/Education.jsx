@@ -1,6 +1,19 @@
+import { useState } from "react";
 import Field from "./Field";
 
 export default function Education({ formState }) {
+  const [bullets, setBullets] = useState([
+    <>
+      <label htmlFor="text">Bullet 1</label>
+      <Field
+        type="text"
+        id={`ed-bullet1`}
+        bullet="ed-bullets"
+        formData={formState[0]}
+        setFormData={formState[1]}
+      ></Field>
+    </>,
+  ]);
   return (
     <section className="flex flex-col">
       <h2>Educational Experience</h2>
@@ -36,14 +49,26 @@ export default function Education({ formState }) {
         formData={formState[0]}
         setFormData={formState[1]}
       ></Field>
-      <label htmlFor="text">Other</label>
-      <Field
-        type="text"
-        id="other"
-        placeholder="Dean's Lister"
-        formData={formState[0]}
-        setFormData={formState[1]}
-      ></Field>
+      {bullets}
+      <button
+        onClick={() => {
+          setBullets([
+            ...bullets,
+            <>
+              <label htmlFor="text">Bullet {bullets.length + 1}</label>
+              <Field
+                type="text"
+                id={`ed-bullet${bullets.length + 1}`}
+                bullet="ed-bullets"
+                formData={formState[0]}
+                setFormData={formState[1]}
+              ></Field>
+            </>,
+          ]);
+        }}
+      >
+        +
+      </button>
     </section>
   );
 }
