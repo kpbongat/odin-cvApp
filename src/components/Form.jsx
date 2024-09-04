@@ -1,6 +1,6 @@
 import Education from "./Education";
 import General from "./General";
-
+import Work from "./Work";
 export default function Form(props) {
   return (
     <section className="flex flex-col form">
@@ -9,6 +9,7 @@ export default function Form(props) {
       </header>
       <General {...props} />
       <Education {...props} />
+      <Work {...props} />
     </section>
   );
 }
